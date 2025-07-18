@@ -10,7 +10,7 @@
         :root {
             --primary: #2c3e50;
             --secondary: #3498db;
-            --accent: #e74c3c;
+            --accent: #3498db; /* Changed from red to blue */
             --light: #ecf0f1;
             --dark: #2c3e50;
             --gray: #7f8c8d;
@@ -122,6 +122,46 @@
             font-weight: 600;
             font-size: 1.1rem;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            margin-bottom: 15px;
+        }
+        
+        .workshop-details {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+        
+        .workshop-details p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .workshop-details i {
+            margin-right: 10px;
+        }
+        
+        .register-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        
+        .register-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
         }
         
         /* Section Styles */
@@ -429,6 +469,16 @@
                 <h1>SUNY Robotics and Autonomy Workshop</h1>
                 <p>Developing a roadmap for education, research and engagement in Robotics and Embodied Intelligence across New York State</p>
                 <div class="date-badge">August 7-8, 2025</div>
+                
+                <div class="workshop-details">
+                    <p><i class="fas fa-map-marker-alt"></i> University at Buffalo, North Campus, Buffalo, NY</p>
+                    <p><i class="fas fa-calendar-alt"></i> Two-day intensive workshop: 9:00 AM - 5:00 PM each day</p>
+                    <p><i class="fas fa-users"></i> Open to faculty, researchers, industry professionals, and government representatives</p>
+                </div>
+                
+                <a href="https://docs.google.com/forms/YOUR_FORM_LINK" class="register-btn" target="_blank">
+                    <i class="fas fa-edit"></i> Register Now
+                </a>
             </div>
         </div>
     </header>
@@ -612,13 +662,13 @@
                     <div class="contact-info">
                         <p><i class="fas fa-envelope"></i> workshop-info@suny.edu</p>
                         <p><i class="fas fa-phone"></i> (555) 123-4567</p>
-                        <p><i class="fas fa-map-marker-alt"></i> SUNY Central Office, Albany, NY</p>
+                        <p><i class="fas fa-map-marker-alt"></i> University at Buffalo, North Campus, Buffalo, NY</p>
                     </div>
                 </div>
                 
                 <div class="footer-section">
                     <h3>Quick Links</h3>
-                    <p><i class="fas fa-arrow-right"></i> Registration Information</p>
+                    <p><i class="fas fa-arrow-right"></i> <a href="https://docs.google.com/forms/YOUR_FORM_LINK" style="color: white; text-decoration: none;">Registration Form</a></p>
                     <p><i class="fas fa-arrow-right"></i> Speaker Submissions</p>
                     <p><i class="fas fa-arrow-right"></i> SUNY Robotics Initiative</p>
                 </div>

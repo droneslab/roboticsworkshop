@@ -19,6 +19,11 @@
             --stony-red: #b31b1b;
             --bingham-green: #006633;
             --albany-purple: #6a1b9a;
+            --robotics: #e74c3c;       /* R color */
+            --autonomy: #3498db;       /* A color */
+            --intelligent: #2ecc71;    /* I color */
+            --systems: #9b59b6;        /* S color */
+            --engineering: #f39c12;    /* E color */
         }
         
         * {
@@ -31,7 +36,8 @@
             font-family: 'Roboto', sans-serif;
             color: #333;
             line-height: 1.6;
-            background-color: #f8f9fa;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7f0 100%);
+            background-attachment: fixed;
         }
         
         h1, h2, h3, h4, h5 {
@@ -55,6 +61,7 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         header::before {
@@ -92,6 +99,11 @@
             justify-content: center;
             min-height: 100px;
             min-width: 150px;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: translateY(-5px);
         }
         
         .logo img {
@@ -120,12 +132,105 @@
         }
         
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 15px;
             color: white;
             max-width: 1000px;
             margin-left: auto;
             margin-right: auto;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .acronym-highlight {
+            display: inline-block;
+            margin: 0 2px;
+            font-weight: 800;
+            font-size: 1.1em;
+            position: relative;
+            padding: 0 4px;
+            transform: translateY(-2px);
+        }
+        
+        .acronym-highlight::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            border-radius: 2px;
+        }
+        
+        .r-letter {
+            color: var(--robotics);
+        }
+        .r-letter::after {
+            background: var(--robotics);
+        }
+        
+        .a-letter {
+            color: var(--autonomy);
+        }
+        .a-letter::after {
+            background: var(--autonomy);
+        }
+        
+        .i-letter {
+            color: var(--intelligent);
+        }
+        .i-letter::after {
+            background: var(--intelligent);
+        }
+        
+        .s-letter {
+            color: var(--systems);
+        }
+        .s-letter::after {
+            background: var(--systems);
+        }
+        
+        .e-letter {
+            color: var(--engineering);
+        }
+        .e-letter::after {
+            background: var(--engineering);
+        }
+        
+        .acronym-explanation {
+            background: rgba(255,255,255,0.1);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            font-weight: 500;
+            max-width: 600px;
+            margin: 15px auto 0;
+        }
+        
+        .acronym-meaning {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .meaning-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 15px;
+            border-radius: 30px;
+        }
+        
+        .meaning-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: inline-block;
         }
         
         header p {
@@ -223,6 +328,21 @@
         /* Overview Section */
         .overview {
             background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .overview::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--autonomy) 0%, var(--engineering) 100%);
+            border-radius: 50%;
+            opacity: 0.05;
+            z-index: 0;
         }
         
         .overview-content {
@@ -232,6 +352,8 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             margin-top: 30px;
             border-left: 4px solid var(--secondary);
+            position: relative;
+            z-index: 1;
         }
         
         .overview-content p {
@@ -300,11 +422,32 @@
             font-weight: 600;
             box-shadow: 0 3px 8px rgba(0,0,0,0.1);
             border: 2px solid var(--light);
+            transition: all 0.3s ease;
+        }
+        
+        .university-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         /* Agenda Section */
         .agenda {
             background-color: #f8f9fa;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .agenda::before {
+            content: "";
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--intelligent) 0%, var(--systems) 100%);
+            border-radius: 50%;
+            opacity: 0.05;
+            z-index: 0;
         }
         
         .agenda-table {
@@ -315,6 +458,8 @@
             border-radius: 10px;
             overflow: hidden;
             background: white;
+            position: relative;
+            z-index: 1;
         }
         
         .agenda-table th {
@@ -339,7 +484,7 @@
         }
         
         .agenda-table tr:not(.day-header):hover {
-        background-color: rgba(52, 152, 219, 0.05);
+            background-color: rgba(52, 152, 219, 0.05);
         }
         
         .time-cell {
@@ -355,11 +500,29 @@
             font-size: 1.1rem;
         }
         
+        .day-header td {
+            padding: 12px 15px;
+            text-align: center;
+        }
+        
         /* Footer */
         footer {
             background: var(--dark);
             color: white;
             padding: 50px 0 30px;
+            position: relative;
+        }
+        
+        footer::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, var(--robotics) 0%, var(--autonomy) 100%);
+            border-radius: 50%;
+            opacity: 0.05;
         }
         
         .footer-content {
@@ -367,6 +530,8 @@
             flex-wrap: wrap;
             gap: 40px;
             margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
         }
         
         .footer-section {
@@ -409,6 +574,8 @@
             border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 0.9rem;
             color: rgba(255,255,255,0.6);
+            position: relative;
+            z-index: 1;
         }
         
         .footer-logos {
@@ -417,6 +584,8 @@
             gap: 20px;
             margin-top: 20px;
             flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
         }
         
         .footer-logos .logo {
@@ -477,6 +646,11 @@
                 font-size: 1.8rem;
             }
             
+            .acronym-highlight {
+                display: inline-block;
+                margin: 0 1px;
+            }
+            
             .date-badge {
                 font-size: 0.9rem;
                 padding: 6px 20px;
@@ -503,6 +677,11 @@
             .objective {
                 flex: 1 1 100%;
             }
+            
+            .acronym-meaning {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -513,24 +692,53 @@
             <div class="header-content">
                 <!-- SUNY and University Logos -->
                 <div class="logo-container">
-            <div class="logo">
-                <img src="static/images/suny.png" alt="SUNY University Logo" class="logo-img">
-            </div>
-            <div class="logo">
-                <img src="static/images/ubb.png" alt="University at Buffalo Logo" class="logo-img">
-            </div>
-            <div class="logo">
-                <img src="static/images/cear.png" alt="cear logo" class="logo-img">
-            </div>
-        </div>
+                    <div class="logo suny-logo">
+                        <img src="static/images/suny.png" alt="SUNY Logo">
+                    </div>
+                    <div class="logo ub-logo">
+                        <img src="static/images/ub.png" alt="University at Buffalo Logo">
+                    </div>
+                    <div class="logo stony-logo">
+                        <img src="static/images/cear.png" alt="Stony Brook University Logo">
+                    </div>
+                </div>
                 
-                <h1>SUNY RAISE Workshop: Robotics, Autonomy & Intelligent Systems in Engineering</h1>
-                <p>Developing a roadmap for education, research and engagement in Robotics and Embodied Intelligence across New York State</p>
+                <h1>SUNY <span class="acronym-highlight r-letter">R</span><span class="acronym-highlight a-letter">A</span><span class="acronym-highlight i-letter">I</span><span class="acronym-highlight s-letter">S</span><span class="acronym-highlight e-letter">E</span> Workshop: Robotics, Autonomy & Intelligent Systems in Engineering</h1>
+                
+                <div class="acronym-explanation">
+                    <p>RAISE: Robotics, Autonomy, and Intelligent Systems in Engineering</p>
+                </div>
+                
+                <div class="acronym-meaning">
+                    <div class="meaning-item">
+                        <span class="meaning-color" style="background: var(--robotics);"></span>
+                        <span>R: Robotics</span>
+                    </div>
+                    <div class="meaning-item">
+                        <span class="meaning-color" style="background: var(--autonomy);"></span>
+                        <span>A: Autonomy</span>
+                    </div>
+                    <div class="meaning-item">
+                        <span class="meaning-color" style="background: var(--intelligent);"></span>
+                        <span>I: Intelligent</span>
+                    </div>
+                    <div class="meaning-item">
+                        <span class="meaning-color" style="background: var(--systems);"></span>
+                        <span>S: Systems</span>
+                    </div>
+                    <div class="meaning-item">
+                        <span class="meaning-color" style="background: var(--engineering);"></span>
+                        <span>E: Engineering</span>
+                    </div>
+                </div>
+                
+                <div class="date-badge">
+                    <i class="fas fa-calendar-alt"></i> August 7-8, 2025
+                </div>
                 
                 <div class="workshop-details">
                     <p><i class="fas fa-map-marker-alt"></i> University at Buffalo, North Campus, Buffalo, NY</p>
-                    <p><i class="fas fa-calendar-alt"></i> August 7-8, 2025: 9:00 AM - 5:00 PM each day</p>
-                    
+                    <p><i class="fas fa-clock"></i> 9:00 AM - 5:00 PM each day</p>
                 </div>
                 
                 <a href="https://docs.google.com/forms/YOUR_FORM_LINK" class="register-btn" target="_blank">
@@ -578,7 +786,7 @@
                     </div>
                 </div>
                 
-                <p>The overall objective of such a roadmap is to develop infrastructure to continually inform government stakeholders, as well as private funding sources of ways SUNY can meet the needs in robotics and embodied intelligence as well as resources needed to accomplish this goal.</p>
+                <p>The overall objective of such a roadmap is to develop infrastructure to continually inform government stakeholders as well as private funding sources of ways SUNY can meet the needs in robotics and embodied intelligence as well as resources needed to accomplish this goal.</p>
                 
                 <p>On behalf of University at Buffalo, Stony Brook University, Binghamton University and University at Albany, we seek your participation to inform us of your needs, provide feedback on the developing vision, and identify the gaps in our current research/education/partnerships, so that we can converge on a robust articulation of the opportunities and resource needs, at the intersection of the key organizations in SUNY.</p>
                 

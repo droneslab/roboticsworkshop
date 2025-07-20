@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUNY Robotics and Autonomy Workshop</title>
+    <title>SUNY RAISE Workshop</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #2c3e50;
             --secondary: #3498db;
-            --accent: #3498db; /* Changed from red to blue */
+            --accent: #e74c3c;
             --light: #ecf0f1;
             --dark: #2c3e50;
             --gray: #7f8c8d;
             --suny-blue: #003366;
             --ub-blue: #005bbb;
+            --stony-red: #b31b1b;
+            --bingham-green: #006633;
+            --albany-purple: #6a1b9a;
         }
         
         * {
@@ -76,6 +79,7 @@
             align-items: center;
             gap: 30px;
             margin-bottom: 25px;
+            flex-wrap: wrap;
         }
         
         .logo {
@@ -86,6 +90,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            min-height: 100px;
+            min-width: 150px;
         }
         
         .logo img {
@@ -101,10 +107,25 @@
             background: var(--ub-blue);
         }
         
+        .stony-logo {
+            background: var(--stony-red);
+        }
+        
+        .bingham-logo {
+            background: var(--bingham-green);
+        }
+        
+        .albany-logo {
+            background: var(--albany-purple);
+        }
+        
         header h1 {
             font-size: 2.5rem;
             margin-bottom: 15px;
             color: white;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         header p {
@@ -159,7 +180,7 @@
         }
         
         .register-btn:hover {
-            background: #2980b9;
+            background: #c0392b;
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(0,0,0,0.2);
         }
@@ -264,6 +285,23 @@
             margin-bottom: 10px;
         }
         
+        .participating-universities {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .university-badge {
+            background: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            border: 2px solid var(--light);
+        }
+        
         /* Agenda Section */
         .agenda {
             background-color: #f8f9fa;
@@ -308,6 +346,13 @@
             font-weight: 600;
             color: var(--secondary);
             white-space: nowrap;
+        }
+        
+        .day-header {
+            background-color: var(--suny-blue);
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
         }
         
         /* Footer */
@@ -371,12 +416,18 @@
             justify-content: center;
             gap: 20px;
             margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-logos .logo {
+            padding: 10px;
+            height: 80px;
         }
         
         .footer-logos img {
             height: 50px;
             filter: brightness(0) invert(1);
-            opacity: 0.8;
+            opacity: 0.9;
         }
         
         /* Responsive */
@@ -403,16 +454,17 @@
             }
             
             .logo-container {
-                flex-direction: column;
                 gap: 15px;
             }
             
             .logo {
                 padding: 10px;
+                min-height: 80px;
+                min-width: 120px;
             }
             
             .logo img {
-                height: 60px;
+                height: 50px;
             }
         }
         
@@ -447,6 +499,10 @@
                 flex-direction: column;
                 gap: 30px;
             }
+            
+            .objective {
+                flex: 1 1 100%;
+            }
         }
     </style>
 </head>
@@ -455,25 +511,35 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <!-- SUNY and UB Logos -->
+                <!-- SUNY and University Logos -->
+                <div class="logo-container">
+                    <div class="logo suny-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/SUNY_logo.svg/1200px-SUNY_logo.svg.png" alt="SUNY Logo">
+                    </div>
+                    <div class="logo ub-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/University_at_Buffalo_logo.svg/1200px-University_at_Buffalo_logo.svg.png" alt="University at Buffalo Logo">
+                    </div>
+                    <div class="logo stony-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Stony_Brook_University_seal.svg/1200px-Stony_Brook_University_seal.svg.png" alt="Stony Brook University Logo">
+                    </div>
+                    <div class="logo bingham-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Binghamton_University_seal.svg/1200px-Binghamton_University_seal.svg.png" alt="Binghamton University Logo">
+                    </div>
+                    <div class="logo albany-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/University_at_Albany_seal.svg/1200px-University_at_Albany_seal.svg.png" alt="University at Albany Logo">
+                    </div>
+                </div>
                 
-        <div class="logo-container">
-            <div class="logo">
-                <img src="static/images/suny.png" alt="SUNY University Logo" class="logo-img">
-            </div>
-            <div class="logo">
-                <img src="static/images/ubb.png" alt="University at Buffalo Logo" class="logo-img">
-            </div>
-        </div>
-                
-                <h1>SUNY Robotics and Autonomy Workshop</h1>
+                <h1>SUNY RAISE Workshop: Robotics, Autonomy & Intelligent Systems in Engineering</h1>
                 <p>Developing a roadmap for education, research and engagement in Robotics and Embodied Intelligence across New York State</p>
                 
-        
+                <div class="date-badge">
+                    <i class="fas fa-calendar-alt"></i> August 7-8, 2025
+                </div>
+                
                 <div class="workshop-details">
                     <p><i class="fas fa-map-marker-alt"></i> University at Buffalo, North Campus, Buffalo, NY</p>
-                    <p><i class="fas fa-calendar-alt"></i> August 7-8, 2025: 9:00 AM - 5:00 PM each day</p>
-                    
+                    <p><i class="fas fa-clock"></i> 9:00 AM - 5:00 PM each day</p>
                 </div>
                 
                 <a href="https://docs.google.com/forms/YOUR_FORM_LINK" class="register-btn" target="_blank">
@@ -492,9 +558,9 @@
             </div>
             
             <div class="overview-content">
-                <p>The SUNY robotics and autonomy workshop plans to bring together stakeholders in robotics, autonomy and core engineering applications of embodied intelligence across the NY state. This includes researchers and educators from SUNY campuses, leaders from industry from NY state and beyond, officials from state and federal representatives with interest in embodied intelligence and robotics as well as K-12 educators in STEM education.</p>
+                <p>The SUNY RAISE workshop plans to bring together stakeholders in robotics, autonomy and core engineering applications of embodied intelligence across the NY state. This includes researchers and educators from SUNY campuses, leaders from industry from NY state and beyond, officials from state and federal representatives with interest in embodied intelligence and robotics as well as K-12 educators in STEM education.</p>
                 
-                <p>The purpose of this workshop is to develop a holistic roadmap for education, research and engagement in Robotics and Embodied Intelligence to meet the upcoming wave of robotics and autonomy that will affect all sectors of industry including manufacturing, defense/aerospace, agriculture, energy, healthcare, and others with an emphasis on these industries in NY state.</p>
+                <p>The purpose of this workshop is to develop a holistic roadmap for education, research and engagement in robotics and embodied Intelligence to meet the upcoming wave of robotics and autonomy that will affect all sectors of industry including manufacturing, defense, aerospace, agriculture, energy, healthcare, and others with an emphasis on these industries in NY state.</p>
                 
                 <div class="highlight">
                     <h3>Roadmap Objectives</h3>
@@ -503,27 +569,34 @@
                 
                 <div class="objectives">
                     <div class="objective">
-                        <i class="fas fa-graduation-cap"></i>
+                        <i class="fas fa-chalkboard-teacher"></i>
                         <h3>Education & Research</h3>
                         <p>Inform SUNY as well as NYS broadly about future education, research and service programs to address the rapid growth in robotics and embodied intelligence.</p>
                     </div>
                     
                     <div class="objective">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-industry"></i>
                         <h3>Student & Industry Needs</h3>
                         <p>Guide SUNY campuses on ways to jointly meet the upcoming needs for both current and future students, and industry personnel (about reskilling/upskilling).</p>
                     </div>
                     
                     <div class="objective">
-                        <i class="fas fa-handshake"></i>
+                        <i class="fas fa-network-wired"></i>
                         <h3>Collaboration Platform</h3>
                         <p>Develop a shared platform across various campuses for continued interaction to inform government stakeholders and private funding sources.</p>
                     </div>
                 </div>
                 
-                <p>The overall objective of such a roadmap is to develop infrastructure to continually inform government stakeholders as well as private funding sources of ways SUNY can meet the needs in robotics and autonomy as well as resources needed to accomplish this goal.</p>
+                <p>The overall objective of such a roadmap is to develop infrastructure to continually inform government stakeholders as well as private funding sources of ways SUNY can meet the needs in robotics and embodied intelligence as well as resources needed to accomplish this goal.</p>
                 
-                <p>We seek your participation to inform us of your needs, provide feedback on the developing vision, and identify the gaps in our current research/education/partnerships, so that we can converge on a robust articulation of the opportunities and resource needs, at the intersection of the key organizations in SUNY.</p>
+                <p>On behalf of University at Buffalo, Stony Brook University, Binghamton University and University at Albany, we seek your participation to inform us of your needs, provide feedback on the developing vision, and identify the gaps in our current research/education/partnerships, so that we can converge on a robust articulation of the opportunities and resource needs, at the intersection of the key organizations in SUNY.</p>
+                
+                <div class="participating-universities">
+                    <div class="university-badge">University at Buffalo</div>
+                    <div class="university-badge">Stony Brook University</div>
+                    <div class="university-badge">Binghamton University</div>
+                    <div class="university-badge">University at Albany</div>
+                </div>
             </div>
         </div>
     </section>
@@ -539,15 +612,16 @@
             <table class="agenda-table">
                 <thead>
                     <tr>
-                        <th>Date</th>
                         <th>Time</th>
                         <th>Agenda</th>
                         <th>Notes</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <tr class="day-header">
+                        <td colspan="3">Thursday, August 7, 2025</td>
+                    </tr>
                     <tr>
-                        <td rowspan="6">8/7/25</td>
                         <td class="time-cell">9:00 - 10:45 AM</td>
                         <td>Faculty research presentations</td>
                         <td>Quick talks by everyone to introduce their background</td>
@@ -578,31 +652,30 @@
                         <td>Breakout based on applications, and their implications to robotics</td>
                     </tr>
                     <tr>
-                        <td>8/7/25</td>
                         <td class="time-cell">2:30 - 3:00 PM</td>
                         <td>Summarizing breakout</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td>8/7/25</td>
                         <td class="time-cell">3:00 - 3:30 PM</td>
                         <td>Coffee/break</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td>8/7/25</td>
                         <td class="time-cell">3:30 - 4:30 PM</td>
                         <td>Panel discussion - stakeholders</td>
                         <td>Have stakeholders in NYS discuss their views on robotics/autonomy applications</td>
                     </tr>
                     <tr>
-                        <td>8/7/25</td>
                         <td class="time-cell">4:30 - 5:00 PM</td>
                         <td>Wrap-up</td>
                         <td></td>
                     </tr>
+                    
+                    <tr class="day-header">
+                        <td colspan="3">Friday, August 8, 2025</td>
+                    </tr>
                     <tr>
-                        <td rowspan="7">8/8/25</td>
                         <td class="time-cell">9:00 - 9:15 AM</td>
                         <td>Welcome</td>
                         <td></td>
@@ -638,7 +711,6 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td>8/8/25</td>
                         <td class="time-cell">2:00 - 2:30 PM</td>
                         <td>Concluding remarks</td>
                         <td></td>
@@ -652,19 +724,46 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                
                 <div class="footer-section">
                     <h3>Contact Information</h3>
                     <div class="contact-info">
                         <p><i class="fas fa-envelope"></i> kdantu@buffalo.edu</p>
-                        <p><i class="fas fa-phone"></i> XYZ</p>
+                        <p><i class="fas fa-phone"></i> (716) 645-XXXX</p>
                         <p><i class="fas fa-map-marker-alt"></i> University at Buffalo, North Campus, Buffalo, NY</p>
                     </div>
                 </div>
                 
+                <div class="footer-section">
+                    <h3>Organized By</h3>
+                    <p>University at Buffalo</p>
+                    <p>Stony Brook University</p>
+                    <p>Binghamton University</p>
+                    <p>University at Albany</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Sponsored By</h3>
+                    <p>SUNY Research Foundation</p>
+                    <p>New York State Department of Education</p>
+                    <p>National Robotics Initiative</p>
+                </div>
             </div>
             
+            <div class="footer-logos">
+                <div class="logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/SUNY_logo.svg/1200px-SUNY_logo.svg.png" alt="SUNY Logo">
+                </div>
+                <div class="logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/University_at_Buffalo_logo.svg/1200px-University_at_Buffalo_logo.svg.png" alt="University at Buffalo Logo">
+                </div>
+                <div class="logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Stony_Brook_University_seal.svg/1200px-Stony_Brook_University_seal.svg.png" alt="Stony Brook University Logo">
+                </div>
+            </div>
             
+            <div class="copyright">
+                &copy; 2025 SUNY RAISE Workshop. All rights reserved.
+            </div>
         </div>
     </footer>
 </body>

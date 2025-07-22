@@ -375,12 +375,16 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
         
+        
         .organizer-photo {
-            height: 200px;
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-        }
+    height: 200px;
+    width: 100%;
+    padding: 0 10px; /* Adds horizontal padding */
+    box-sizing: border-box; /* Ensures padding doesn't increase total width */
+    overflow: hidden;
+    position: relative;
+}
+
         
         .organizer-photo img {
             width: 100%;

@@ -346,7 +346,7 @@
             flex: 1;
         }
         
-        /* Organizers Section */
+        /* Organizers Section - Fixed Photo Cropping */
         .organizers-section {
             background: linear-gradient(to bottom, #f8f9fa, #eef2f7);
             padding: 60px 0;
@@ -375,22 +375,21 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
         
-        
         .organizer-photo {
-    height: 200px;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.organizer-photo img {
-    width: 100%;
-    height: 120%;
-    object-fit: cover; /* Fill the box, even if it crops a bit */
-    display: block;
-}
-
-
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+        }
+        
+        .organizer-photo img {
+            width: 100%;
+            height: 100%; /* Fixed from 120% to 100% */
+            object-fit: cover;
+            object-position: center top; /* Ensures faces are centered */
+            display: block;
+        }
         
         .organizer-card:hover .organizer-photo img {
             transform: scale(1.05);
@@ -774,7 +773,7 @@
         </div>
     </section>
     
-    <!-- Organizers Section -->
+    <!-- Organizers Section with Fixed Photo Cropping -->
     <section class="organizers-section">
         <div class="container">
             <h2 class="section-title">Organizing Committee</h2>
@@ -783,7 +782,7 @@
                 <!-- Organizer 1 -->
                 <div class="organizer-card">
                     <div class="organizer-photo">
-                        <img src="static/images/karthik.png" alt="Dr. Karthik Dantu">
+                        <img src="static/images/karthik.png" alt="Prof. Karthik Dantu">
                     </div>
                     <div class="organizer-info">
                         <h3 class="organizer-name">Prof. Karthik Dantu</h3>
@@ -794,11 +793,10 @@
                 <!-- Organizer 2 -->
                 <div class="organizer-card">
                     <div class="organizer-photo">
-                        <img src="static/images/souma.png" alt="Dr. Sarah Johnson">
+                        <img src="static/images/souma.png" alt="Prof. Souma Chowdhury">
                     </div>
                     <div class="organizer-info">
                         <h3 class="organizer-name">Prof. Souma Chowdhury</h3>
-                        
                         <p class="organizer-affiliation">Associate Professor, Mechanical Engineering<br>University at Buffalo</p>
                     </div>
                 </div>
@@ -806,11 +804,10 @@
                 <!-- Organizer 3 -->
                 <div class="organizer-card">
                     <div class="organizer-photo">
-                        <img src="static/images/karthik.png" alt="Dr. Michael Rodriguez">
+                        <img src="static/images/karthik.png" alt="Prof. Nilanjan Chakraborty">
                     </div>
                     <div class="organizer-info">
                         <h3 class="organizer-name">Prof. Nilanjan Chakraborty</h3>
-                        
                         <p class="organizer-affiliation">Associate Professor, Department of Mechanical Engineering<br>Stony Brook University</p>
                     </div>
                 </div>
@@ -818,11 +815,10 @@
                 <!-- Organizer 4 -->
                 <div class="organizer-card">
                     <div class="organizer-photo">
-                        <img src="static/images/karthik.png" alt="Dr. Jennifer Lee">
+                        <img src="static/images/karthik.png" alt="Prof. Chinwe Ekenna">
                     </div>
                     <div class="organizer-info">
                         <h3 class="organizer-name">Prof. Chinwe Ekenna</h3>
-                       
                         <p class="organizer-affiliation">Associate Professor, Department of Computer Science<br>University at Albany</p>
                     </div>
                 </div>
@@ -830,12 +826,11 @@
                 <!-- Organizer 5 -->
                 <div class="organizer-card">
                     <div class="organizer-photo">
-                        <img src="static/images/karthik.png" alt="Dr. Robert Chen">
+                        <img src="static/images/karthik.png" alt="Prof. Shiqi Zhang">
                     </div>
                     <div class="organizer-info">
                         <h3 class="organizer-name">Prof. Shiqi Zhang</h3>
-                        
-                        <p class="organizer-affiliation">Associate Professor, School of Computing<br>Binghamton University'</p>
+                        <p class="organizer-affiliation">Associate Professor, School of Computing<br>Binghamton University</p>
                     </div>
                 </div>
             </div>

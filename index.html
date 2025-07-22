@@ -361,17 +361,16 @@
         }
         
         .agenda-time {
-            min-width: 120px;
+            min-width: 100px;
             font-weight: 600;
             color: var(--secondary);
-            margin-right: 15px; /* Added space between time and description */
         }
         
         .agenda-desc {
             flex: 1;
         }
         
-        /* Organizers Section - Fixed Photo Cropping and Smaller Cards */
+        /* Organizers Section - Fixed Photo Cropping */
         .organizers-section {
             background: linear-gradient(to bottom, #f8f9fa, #eef2f7);
             padding: 60px 0;
@@ -381,7 +380,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px; /* Reduced gap */
+            gap: 30px;
             margin-top: 30px;
         }
         
@@ -390,18 +389,18 @@
             border-radius: 10px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             width: 100%;
-            max-width: 220px; /* Reduced card width */
+            max-width: 200px;
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .organizer-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
         
         .organizer-photo {
-            height: 160px; /* Reduced height */
+            height: 200px;
             width: 100%;
             overflow: hidden;
             position: relative;
@@ -410,11 +409,10 @@
         
         .organizer-photo img {
             width: 100%;
-            height: 100%;
+            height: 100%; /* Fixed from 120% to 100% */
             object-fit: cover;
-            object-position: center top;
+            object-position: center top; /* Ensures faces are centered */
             display: block;
-            transition: transform 0.3s ease;
         }
         
         .organizer-card:hover .organizer-photo img {
@@ -422,27 +420,27 @@
         }
         
         .organizer-info {
-            padding: 15px; /* Reduced padding */
+            padding: 25px;
             text-align: center;
         }
         
         .organizer-name {
             color: var(--primary);
-            margin-bottom: 6px;
-            font-size: 1.1rem; /* Smaller font */
+            margin-bottom: 8px;
+            font-size: 1.3rem;
         }
         
         .organizer-title {
             color: var(--secondary);
             font-weight: 500;
-            margin-bottom: 8px;
-            font-size: 0.9rem; /* Smaller font */
+            margin-bottom: 12px;
+            font-size: 1rem;
         }
         
         .organizer-affiliation {
             color: var(--gray);
-            font-size: 0.85rem; /* Smaller font */
-            line-height: 1.4;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
         
         /* Footer */
@@ -525,55 +523,6 @@
         }
         
         /* Responsive */
-        @media (max-width: 1200px) {
-            .organizer-card {
-                max-width: 200px;
-            }
-        }
-        
-        @media (max-width: 1100px) {
-            .organizer-card {
-                max-width: 180px;
-            }
-            .organizer-photo {
-                height: 150px;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .organizers-container {
-                gap: 15px;
-            }
-            .organizer-card {
-                max-width: 170px;
-            }
-            .organizer-name {
-                font-size: 1.05rem;
-            }
-            .organizer-title {
-                font-size: 0.85rem;
-            }
-            .organizer-affiliation {
-                font-size: 0.8rem;
-            }
-        }
-        
-        @media (max-width: 900px) {
-            .organizer-card {
-                max-width: 160px;
-            }
-            .organizer-photo {
-                height: 140px;
-            }
-        }
-        
-        @media (max-width: 850px) {
-            .organizer-card {
-                max-width: 220px;
-                flex: 1 1 30%;
-            }
-        }
-        
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2.2rem;
@@ -609,18 +558,6 @@
             .flyer-content .purpose-list li {
                 padding-left: 30px;
             }
-            
-            .organizer-card {
-                max-width: 220px;
-                flex: 1 1 45%;
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .organizer-card {
-                max-width: 100%;
-                flex: 1 1 100%;
-            }
         }
         
         @media (max-width: 480px) {
@@ -648,7 +585,7 @@
             }
             
             .agenda-time {
-                min-width: 100px;
+                min-width: 80px;
                 font-size: 0.9rem;
             }
             
@@ -698,9 +635,7 @@
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLScj94zsNhL2HseGaLdo83LqN0ZakEfd3TKZfY4WCnunRqkdFQ/viewform?pli=1&pli=1" class="register-btn" target="_blank">
                         <i class="fas fa-edit"></i> Register Now
                     </a>
-                    <a href="https://drive.google.com/file/d/1OkYHJoAcNSLWKnljEFWKHxqhul3MsVCG/view" class="flyer-btn" target="_blank">
-                        <i class="fas fa-file-pdf"></i> View Flyer
-                    </a>
+                   
                     <a href="#agenda" class="agenda-btn">
                         <i class="fas fa-calendar"></i> View Agenda
                     </a>
@@ -874,7 +809,7 @@
                     </div>
                     <div class="organizer-info">
                         <h3 class="organizer-name">Prof. Nilanjan Chakraborty</h3>
-                        <p class="organizer-affiliation">Associate Professor, Department of Mechanical Engineering<br>Stony Brook University</p>
+                        <p class="organizer-affiliation">Associate Professor, Mechanical Engineering<br>Stony Brook University</p>
                     </div>
                 </div>
                 
@@ -885,7 +820,7 @@
                     </div>
                     <div class="organizer-info">
                         <h3 class="organizer-name">Prof. Chinwe Ekenna</h3>
-                        <p class="organizer-affiliation">Associate Professor, Department of Computer Science<br>University at Albany</p>
+                        <p class="organizer-affiliation">Associate Professor, Computer Science<br>University at Albany</p>
                     </div>
                 </div>
                 

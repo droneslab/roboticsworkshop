@@ -21,6 +21,7 @@
             --albany-purple: #6a1b9a;
             --section-bg: #f8f9fa;
             --section-alt: #eef2f7;
+            --organizer-bg: #ffffff;
         }
         
         * {
@@ -345,6 +346,77 @@
             flex: 1;
         }
         
+        /* Organizers Section */
+        .organizers-section {
+            background: linear-gradient(to bottom, #f8f9fa, #eef2f7);
+            padding: 60px 0;
+        }
+        
+        .organizers-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .organizer-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 300px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .organizer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .organizer-photo {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .organizer-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .organizer-card:hover .organizer-photo img {
+            transform: scale(1.05);
+        }
+        
+        .organizer-info {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .organizer-name {
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+        
+        .organizer-title {
+            color: var(--secondary);
+            font-weight: 500;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+        
+        .organizer-affiliation {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
         /* Footer */
         footer {
             background: var(--dark);
@@ -481,6 +553,10 @@
                 min-width: 80px;
                 font-size: 0.9rem;
             }
+            
+            .organizer-card {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -520,7 +596,9 @@
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLScj94zsNhL2HseGaLdo83LqN0ZakEfd3TKZfY4WCnunRqkdFQ/viewform?pli=1&pli=1" class="register-btn" target="_blank">
                         <i class="fas fa-edit"></i> Register Now
                     </a>
-                    
+                    <a href="https://drive.google.com/file/d/1OkYHJoAcNSLWKnljEFWKHxqhul3MsVCG/view" class="flyer-btn" target="_blank">
+                        <i class="fas fa-file-pdf"></i> View Flyer
+                    </a>
                     <a href="#agenda" class="agenda-btn">
                         <i class="fas fa-calendar"></i> View Agenda
                     </a>
@@ -589,43 +667,43 @@
                     </div>
                     <div class="agenda-items">
                         <div class="agenda-item">
-                            <div class="agenda-time">9:00-9:30 AM</div>
-                            <div class="agenda-desc"> Registration and Welcome Coffee</div>
+                            <div class="agenda-time">9:00 AM - 9:30 AM</div>
+                            <div class="agenda-desc">Registration and Welcome Coffee</div>
                         </div>
                         <div class="agenda-item">
-                            <div class="agenda-time">9:30-10:00 AM</div>
+                            <div class="agenda-time">9:30 AM - 10:00 AM</div>
                             <div class="agenda-desc">Opening Remarks & SUNY Vision for Robotics</div>
                         </div>
                         <div class="agenda-item">
-                            <div class="agenda-time">10:00-10:45 AM</div>
+                            <div class="agenda-time">10:00 AM - 10:45 AM</div>
                             <div class="agenda-desc">Keynote Address: "The Future of Robotics in New York"</div>
                         </div>
                         <div class="agenda-item">
-                            <div class="agenda-time">10:45-11:00 AM</div>
+                            <div class="agenda-time">10:45 AM - 11:00 AM</div>
                             <div class="agenda-desc">Coffee Break</div>
                         </div>
                         <div class="agenda-item">
-                            <div class="agenda-time">11:00-12:30 PM</div>
+                            <div class="agenda-time">11:00 AM - 12:30 PM</div>
                             <div class="agenda-desc">Panel Discussion: Research Thrusts and Opportunities</div>
                         </div>
                         <div class="agenda-item">
-                            <div class="agenda-time">12:30-1:30 PM</div>
+                            <div class="agenda-time">12:30 PM - 1:30 PM</div>
                             <div class="agenda-desc">Lunch</div>
                         </div>
                         <div class="agenda-item">
-                            <div class="agenda-time">1:30-3:00 PM</div>
+                            <div class="agenda-time">1:30 PM - 3:00 PM</div>
                             <div class="agenda-desc">Breakout Sessions: Research Collaboration</div>
                         </div>
                         <div class="agenda-item">
-                            <div class="agenda-time">3:00-3:15 PM</div>
+                            <div class="agenda-time">3:00 PM - 3:15 PM</div>
                             <div class="agenda-desc">Afternoon Break</div>
                         </div>
                         <div class="agenda-item">
-                            <div class="agenda-time">3:15-4:45 PM</div>
+                            <div class="agenda-time">3:15 PM - 4:45 PM</div>
                             <div class="agenda-desc">Breakout Sessions: Education and Curriculum Development</div>
                         </div>
                         <div class="agenda-item">
-                            <div class="agenda-time">4:45-5:00 PM</div>
+                            <div class="agenda-time">4:45 PM - 5:00 PM</div>
                             <div class="agenda-desc">Day 1 Wrap-up</div>
                         </div>
                     </div>
@@ -638,46 +716,127 @@
                     </div>
                     <div class="agenda-items">
                         <div class="agenda-item">
-                            <div class="agenda-time">9:00-9:30 AM</div>
+                            <div class="agenda-time">9:00 AM - 9:30 AM</div>
                             <div class="agenda-desc">Morning Coffee and Networking</div>
                         </div>
                         <div class="agenda-item">
-                            <div class="agenda-time">9:30-10:45 AM</div>
+                            <div class="agenda-time">9:30 AM - 10:45 AM</div>
                             <div class="agenda-desc">Industry Panel: Workforce Needs and Technology Transfer</div>
                         </div>
                         <div class="agenda-item">
-                            <div class="agenda-time">10:45-11:00 AM</div>
+                            <div class="agenda-time">10:45 AM - 11:00 AM</div>
                             <div class="agenda-desc">Coffee Break</div>
                         </div>
                         <div class="agenda-item">
-                            <div class="agenda-time">11:00-12:30 PM</div>
+                            <div class="agenda-time">11:00 AM - 12:30 PM</div>
                             <div class="agenda-desc">Breakout Sessions: Industry-Academia Partnerships</div>
                         </div>
                         <div class="agenda-item">
-                            <div class="agenda-time">12:30-1:30 PM</div>
+                            <div class="agenda-time">12:30 PM - 1:30 PM</div>
                             <div class="agenda-desc">Lunch</div>
                         </div>
                         <div class="agenda-item">
-                            <div class="agenda-time">1:30- 3:00 PM</div>
+                            <div class="agenda-time">1:30 PM - 3:00 PM</div>
                             <div class="agenda-desc">Roadmap Development Session</div>
                         </div>
                         <div class="agenda-item">
-                            <div class="agenda-time">3:00-3:15 PM</div>
+                            <div class="agenda-time">3:00 PM - 3:15 PM</div>
                             <div class="agenda-desc">Afternoon Break</div>
                         </div>
                         <div class="agenda-item">
-                            <div class="agenda-time">3:15-4:30 PM</div>
+                            <div class="agenda-time">3:15 PM - 4:30 PM</div>
                             <div class="agenda-desc">Report Out and Next Steps</div>
                         </div>
                         <div class="agenda-item">
-                            <div class="agenda-time">4:30-5:00 PM</div>
+                            <div class="agenda-time">4:30 PM - 5:00 PM</div>
                             <div class="agenda-desc">Closing Remarks</div>
                         </div>
                     </div>
                 </div>
             </div>
             
+            <div class="content-box" style="margin-top: 40px;">
+                <h3>Breakout Session Topics</h3>
+                <ul>
+                    <li>Autonomous Systems and AI Integration</li>
+                    <li>Robotics in Healthcare and Rehabilitation</li>
+                    <li>Industrial Automation and Smart Manufacturing</li>
+                    <li>Agricultural Robotics and Environmental Monitoring</li>
+                    <li>Educational Robotics and STEM Outreach</li>
+                    <li>Ethical and Societal Implications of Robotics</li>
+                    <li>Robotics for Disaster Response and Public Safety</li>
+                    <li>Underwater and Space Robotics</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Organizers Section -->
+    <section class="organizers-section">
+        <div class="container">
+            <h2 class="section-title">Organizing Committee</h2>
             
+            <div class="organizers-container">
+                <!-- Organizer 1 -->
+                <div class="organizer-card">
+                    <div class="organizer-photo">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Dr. Karthik Dantu">
+                    </div>
+                    <div class="organizer-info">
+                        <h3 class="organizer-name">Dr. Karthik Dantu</h3>
+                        <p class="organizer-title">Workshop Chair</p>
+                        <p class="organizer-affiliation">Associate Professor, Computer Science and Engineering<br>University at Buffalo</p>
+                    </div>
+                </div>
+                
+                <!-- Organizer 2 -->
+                <div class="organizer-card">
+                    <div class="organizer-photo">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Dr. Sarah Johnson">
+                    </div>
+                    <div class="organizer-info">
+                        <h3 class="organizer-name">Dr. Sarah Johnson</h3>
+                        <p class="organizer-title">Program Chair</p>
+                        <p class="organizer-affiliation">Professor, Mechanical Engineering<br>Stony Brook University</p>
+                    </div>
+                </div>
+                
+                <!-- Organizer 3 -->
+                <div class="organizer-card">
+                    <div class="organizer-photo">
+                        <img src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Dr. Michael Rodriguez">
+                    </div>
+                    <div class="organizer-info">
+                        <h3 class="organizer-name">Dr. Michael Rodriguez</h3>
+                        <p class="organizer-title">Industry Liaison</p>
+                        <p class="organizer-affiliation">Associate Dean, College of Engineering<br>University at Albany</p>
+                    </div>
+                </div>
+                
+                <!-- Organizer 4 -->
+                <div class="organizer-card">
+                    <div class="organizer-photo">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80" alt="Dr. Jennifer Lee">
+                    </div>
+                    <div class="organizer-info">
+                        <h3 class="organizer-name">Dr. Jennifer Lee</h3>
+                        <p class="organizer-title">Education Chair</p>
+                        <p class="organizer-affiliation">Director, Robotics Research Lab<br>Binghamton University</p>
+                    </div>
+                </div>
+                
+                <!-- Organizer 5 -->
+                <div class="organizer-card">
+                    <div class="organizer-photo">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Dr. Robert Chen">
+                    </div>
+                    <div class="organizer-info">
+                        <h3 class="organizer-name">Dr. Robert Chen</h3>
+                        <p class="organizer-title">Research Chair</p>
+                        <p class="organizer-affiliation">Professor, Electrical Engineering<br>University at Buffalo</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -712,7 +871,10 @@
                 </div>
             </div>
             
-           
+            <div class="copyright">
+                <p>&copy; 2025 SUNY RAISE Workshop. All rights reserved.</p>
+                <p>Center for Embodied Autonomy and Robotics | University at Buffalo</p>
+            </div>
         </div>
     </footer>
 </body>

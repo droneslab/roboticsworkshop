@@ -270,23 +270,47 @@
             line-height: 1.7;
         }
         
-        .content-box ul {
-            padding-left: 20px;
+        .flyer-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .flyer-content p {
             margin-bottom: 20px;
+            text-align: justify;
         }
         
-        .content-box li {
-            margin-bottom: 10px;
+        .flyer-content .highlight {
+            background: linear-gradient(120deg, rgba(52, 152, 219, 0.15) 0%, rgba(52, 152, 219, 0) 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .flyer-content .purpose-list {
+            counter-reset: purpose-counter;
+            margin: 25px 0;
+            padding-left: 20px;
+        }
+        
+        .flyer-content .purpose-list li {
+            margin-bottom: 15px;
             position: relative;
-            padding-left: 25px;
+            padding-left: 35px;
+            list-style-type: none;
         }
         
-        .content-box li::before {
-            content: 
-            color: var(--secondary);
-            font-weight: bold;
+        .flyer-content .purpose-list li::before {
+            counter-increment: purpose-counter;
+            content: counter(purpose-counter) ")";
             position: absolute;
             left: 0;
+            top: 0;
+            font-weight: bold;
+            color: var(--secondary);
             font-size: 1.2rem;
         }
         
@@ -525,6 +549,15 @@
             .agenda-container {
                 flex-direction: column;
             }
+            
+            .flyer-content {
+                font-size: 1rem;
+                padding: 15px;
+            }
+            
+            .flyer-content .purpose-list li {
+                padding-left: 30px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -558,6 +591,10 @@
             
             .organizer-card {
                 max-width: 100%;
+            }
+            
+            .flyer-content .highlight {
+                padding: 15px;
             }
         }
     </style>
@@ -598,7 +635,9 @@
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLScj94zsNhL2HseGaLdo83LqN0ZakEfd3TKZfY4WCnunRqkdFQ/viewform?pli=1&pli=1" class="register-btn" target="_blank">
                         <i class="fas fa-edit"></i> Register Now
                     </a>
-                    
+                    <a href="https://drive.google.com/file/d/1OkYHJoAcNSLWKnljEFWKHxqhul3MsVCG/view" class="flyer-btn" target="_blank">
+                        <i class="fas fa-file-pdf"></i> View Flyer
+                    </a>
                     <a href="#agenda" class="agenda-btn">
                         <i class="fas fa-calendar"></i> View Agenda
                     </a>
@@ -608,31 +647,31 @@
     </header>
 
     <!-- Workshop Overview Section -->
-    <!-- Workshop Overview Section -->
-<section class="overview-section">
-    <div class="container">
-        <h2 class="section-title">Workshop Overview</h2>
-        
-        <div class="content-box">
-            <p>The SUNY RAISE workshop plans to bring together stakeholders in robotics, autonomy and core engineering applications of embodied intelligence across the NY state. This includes researchers and educators from SUNY campuses, leaders from industry from NY state and beyond, officials from state and federal representatives with interest in embodied intelligence and robotics as well as K-12 educators in STEM education.</p>
-
-            <p>The purpose of this workshop is to develop a holistic roadmap for education, research and engagement in robotics and embodied Intelligence to meet the upcoming wave of robotics and autonomy that will affect all sectors of industry including manufacturing, defense, aerospace, agriculture, energy, healthcare, and others with an emphasis on these industries in NY state.</p>
-
-            <p>This roadmap, informed by the capabilities, opportunities, and needs of the various stakeholders across NY state, will serve three important purposes:</p>
-
-            <ol style="padding-left: 20px; margin-bottom: 20px;">
-                <li>Inform SUNY as well as NYS broadly about future education, research and service programs to address the rapid growth in robotics and embodied intelligence.</li>
-                <li>Guide SUNY campuses on ways to jointly meet the upcoming needs for current, future students, and industry personnel (about reskilling/upskilling).</li>
-                <li>Develop a shared platform across various campuses for continued interaction.</li>
-            </ol>
-
-            <p>The overall objective of such a roadmap is to develop infrastructure to continually inform government stakeholders as well as private funding sources of ways SUNY can meet the needs in robotics and embodied intelligence as well as resources needed to accomplish this goal.</p>
-
-            <p>On behalf of University at Buffalo, Stonybrook University, Binghamton University and University at Albany, we seek your participation to inform us of your needs, provide feedback on the developing vision, and identify the gaps in our current research/education/partnerships, so that we can converge on a robust articulation of the opportunities and resource needs, at the intersection of the key organizations in SUNY.</p>
+    <section class="overview-section">
+        <div class="container">
+            <h2 class="section-title">Workshop Overview</h2>
+            
+            <div class="content-box flyer-content">
+                <p>The SUNY RAISE workshop plans to bring together stakeholders in robotics, autonomy and core engineering applications of embodied intelligence across the NY state. This includes researchers and educators from SUNY campuses, leaders from industry from NY state and beyond, officials from state and federal representatives with interest in embodied intelligence and robotics as well as K-12 educators in STEM education.</p>
+                
+                <p>The purpose of this workshop is to develop a holistic roadmap for education, research and engagement in robotics and embodied Intelligence to meet the upcoming wave of robotics and autonomy that will affect all sectors of industry including manufacturing, defense, aerospace, agriculture, energy, healthcare, and others with an emphasis on these industries in NY state.</p>
+                
+                <div class="highlight">
+                    <p>This roadmap, informed by the capabilities, opportunities, and needs of the various stakeholders across NY state, will serve three important purposes:</p>
+                    
+                    <ol class="purpose-list">
+                        <li>Inform SUNY as well as NYS broadly about future education, research and service programs to address the rapid growth in robotics and embodied intelligence</li>
+                        <li>Guide SUNY campuses on ways to jointly meet the upcoming needs for current, future students, and industry personnel (about reskilling/upskilling)</li>
+                        <li>Develop a shared platform across various campuses for continued interaction</li>
+                    </ol>
+                </div>
+                
+                <p>The overall objective of such a roadmap is to develop infrastructure to continually inform government stakeholders as well as private funding sources of ways SUNY can meet the needs in robotics and embodied intelligence as well as resources needed to accomplish this goal.</p>
+                
+                <p>On behalf of University at Buffalo, Stonybrook University, Binghamton University and University at Albany, we seek your participation to inform us of your needs, provide feedback on the developing vision, and identify the gaps in our current research/education/partnerships, so that we can converge on a robust articulation of the opportunities and resource needs, at the intersection of the key organizations in SUNY.</p>
+            </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Agenda Section -->
     <section id="agenda" class="agenda-section">
@@ -734,8 +773,6 @@
                     </div>
                 </div>
             </div>
-            
-            
         </div>
     </section>
     

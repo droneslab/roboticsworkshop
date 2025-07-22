@@ -356,22 +356,29 @@
         }
         .footer-logos .partner-logo {
     background-color: #ffffff;
-    border-radius: 8px;
-    padding: 15px;
-    min-width: 160px;
-    height: 140px; /* increased height */
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 200px;
+    height: 180px; /* Increased height */
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
 }
 
 .footer-logos .partner-logo img {
-    max-height: 100px; /* increased image size */
+    max-height: 130px; /* Increased image size */
     max-width: 100%;
     filter: none;
     opacity: 1;
+    transition: transform 0.3s ease;
 }
+
+.footer-logos .partner-logo:hover {
+    transform: scale(1.05); /* subtle hover zoom effect */
+}
+
 
 
         

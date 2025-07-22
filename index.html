@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +19,8 @@
             --stony-red: #b31b1b;
             --bingham-green: #006633;
             --albany-purple: #6a1b9a;
+            --section-bg: #f8f9fa;
+            --section-alt: #eef2f7;
         }
         
         * {
@@ -46,6 +47,28 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
         }
         
         /* Header Styles */
@@ -174,7 +197,7 @@
             flex-wrap: wrap;
         }
         
-        .register-btn, .flyer-btn {
+        .register-btn, .flyer-btn, .agenda-btn {
             display: inline-block;
             padding: 12px 30px;
             border-radius: 30px;
@@ -208,6 +231,118 @@
             background: #2980b9;
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+        
+        .agenda-btn {
+            background: #9b59b6;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .agenda-btn:hover {
+            background: #8e44ad;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Content Sections */
+        .overview-section {
+            background-color: var(--section-bg);
+        }
+        
+        .content-box {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .content-box h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .content-box p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .content-box ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .content-box li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .content-box li::before {
+            content: "•";
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        
+        .agenda-section {
+            background-color: var(--section-alt);
+        }
+        
+        .agenda-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .agenda-day {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        .agenda-header {
+            background: var(--primary);
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        
+        .agenda-header h3 {
+            margin: 0;
+            color: white;
+        }
+        
+        .agenda-items {
+            padding: 20px;
+        }
+        
+        .agenda-item {
+            padding: 15px 0;
+            border-bottom: 1px dashed #e0e0e0;
+            display: flex;
+        }
+        
+        .agenda-item:last-child {
+            border-bottom: none;
+        }
+        
+        .agenda-time {
+            min-width: 100px;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        
+        .agenda-desc {
+            flex: 1;
         }
         
         /* Footer */
@@ -308,6 +443,14 @@
             .logo img {
                 height: 50px;
             }
+            
+            .button-group {
+                gap: 15px;
+            }
+            
+            .agenda-container {
+                flex-direction: column;
+            }
         }
         
         @media (max-width: 480px) {
@@ -329,9 +472,14 @@
                 align-items: center;
             }
             
-            .register-btn, .flyer-btn {
+            .register-btn, .flyer-btn, .agenda-btn {
                 width: 100%;
                 max-width: 250px;
+            }
+            
+            .agenda-time {
+                min-width: 80px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -339,39 +487,33 @@
 <body>
     <!-- Header -->
     <header>
-        
-             
-                
-                <h1>SUNY RAISE Workshop: <span class="first-letter">R</span>obotics, 
-  <span class="first-letter">A</span>utonomy &amp; 
-  <span class="first-letter">I</span>ntelligent 
-  <span class="first-letter">S</span>ystems in 
-  <span class="first-letter">E</span>ngineering</h1>
-                <p>Developing a roadmap for education, research and engagement in Robotics and Embodied Intelligence across New York State</p>
-
-
-
-               <div class="container">
+        <div class="container">
             <div class="header-content">
                 <!-- SUNY and University Logos -->
                 <div class="logo-container">
-                <div class="logo">
-                <img src="static/images/suny.png" alt="SUNY University Logo" class="logo-img">
+                    <div class="logo">
+                        <img src="static/images/suny.png" alt="SUNY University Logo" class="logo-img">
+                    </div>
+                    <div class="logo">
+                        <img src="static/images/ubb.png" alt="University at Buffalo Logo" class="logo-img">
+                    </div>
+                    <div class="logo">
+                        <a href="https://www.buffalo.edu/cear.html" target="_blank">
+                            <img src="static/images/cear.png" alt="Center for Embodied Autonomy and Robotics (CEAR) Logo" class="logo-img">
+                        </a>
+                    </div>
                 </div>
-                <div class="logo">
-                <img src="static/images/ubb.png" alt="University at Buffalo Logo" class="logo-img">
-                </div>
-                <div class="logo">
-  <a href="https://www.buffalo.edu/cear.html" target="_blank">
-    <img src="static/images/cear.png" alt="Center for Embodied Autonomy and Robotics (CEAR) Logo" class="logo-img">
-  </a>
-</div>
-                </div>
+                
+                <h1>SUNY RAISE Workshop: <span class="first-letter">R</span>obotics, 
+                    <span class="first-letter">A</span>utonomy &amp; 
+                    <span class="first-letter">I</span>ntelligent 
+                    <span class="first-letter">S</span>ystems in 
+                    <span class="first-letter">E</span>ngineering</h1>
+                <p>Developing a roadmap for education, research and engagement in Robotics and Embodied Intelligence across New York State</p>
                 
                 <div class="workshop-details">
                     <p><i class="fas fa-map-marker-alt"></i> University at Buffalo, North Campus, Buffalo, NY</p>
                     <p><i class="fas fa-calendar-alt"></i> August 7-8, 2025: 9:00 AM - 5:00 PM each day</p>
-                    
                 </div>
                 
                 <div class="button-group">
@@ -381,10 +523,177 @@
                     <a href="https://drive.google.com/file/d/1OkYHJoAcNSLWKnljEFWKHxqhul3MsVCG/view" class="flyer-btn" target="_blank">
                         <i class="fas fa-file-pdf"></i> View Flyer
                     </a>
+                    <a href="#agenda" class="agenda-btn">
+                        <i class="fas fa-calendar"></i> View Agenda
+                    </a>
                 </div>
             </div>
         </div>
     </header>
+
+    <!-- Workshop Overview Section -->
+    <section class="overview-section">
+        <div class="container">
+            <h2 class="section-title">Workshop Overview</h2>
+            
+            <div class="content-box">
+                <p>The SUNY RAISE (Robotics, Autonomy & Intelligent Systems in Engineering) workshop aims to bring together faculty, researchers, and industry professionals from across New York State to develop a strategic roadmap for advancing education, research, and engagement in robotics and embodied intelligence.</p>
+                
+                <p>This workshop will foster collaboration, identify key challenges and opportunities, and establish a vibrant community to position New York as a leader in robotics innovation.</p>
+            </div>
+            
+            <div class="content-box">
+                <h3>Workshop Objectives</h3>
+                <ul>
+                    <li>Establish a SUNY-wide community of robotics researchers and educators</li>
+                    <li>Identify key research thrusts and educational pathways</li>
+                    <li>Develop collaborative research proposals and educational programs</li>
+                    <li>Engage industry partners for workforce development and technology transfer</li>
+                    <li>Create a strategic roadmap for SUNY's role in robotics advancement</li>
+                </ul>
+            </div>
+            
+            <div class="content-box">
+                <h3>Target Audience</h3>
+                <ul>
+                    <li>Faculty and researchers from SUNY institutions</li>
+                    <li>Industry professionals in robotics and automation</li>
+                    <li>Government representatives and policymakers</li>
+                    <li>Graduate students in robotics-related fields</li>
+                    <li>Educational leaders and curriculum developers</li>
+                </ul>
+            </div>
+            
+            <div class="content-box">
+                <h3>Expected Outcomes</h3>
+                <ul>
+                    <li>A comprehensive SUNY Robotics Roadmap document</li>
+                    <li>Formation of specialized working groups for key research areas</li>
+                    <li>Preliminary proposals for collaborative research projects</li>
+                    <li>Framework for SUNY-wide robotics curriculum development</li>
+                    <li>Industry-academia partnership agreements</li>
+                    <li>Plans for future workshops and conferences</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agenda Section -->
+    <section id="agenda" class="agenda-section">
+        <div class="container">
+            <h2 class="section-title">Workshop Agenda</h2>
+            
+            <div class="agenda-container">
+                <!-- Day 1 Agenda -->
+                <div class="agenda-day">
+                    <div class="agenda-header">
+                        <h3>Day 1: August 7, 2025</h3>
+                    </div>
+                    <div class="agenda-items">
+                        <div class="agenda-item">
+                            <div class="agenda-time">9:00 AM - 9:30 AM</div>
+                            <div class="agenda-desc">Registration and Welcome Coffee</div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-time">9:30 AM - 10:00 AM</div>
+                            <div class="agenda-desc">Opening Remarks & SUNY Vision for Robotics</div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-time">10:00 AM - 10:45 AM</div>
+                            <div class="agenda-desc">Keynote Address: "The Future of Robotics in New York"</div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-time">10:45 AM - 11:00 AM</div>
+                            <div class="agenda-desc">Coffee Break</div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-time">11:00 AM - 12:30 PM</div>
+                            <div class="agenda-desc">Panel Discussion: Research Thrusts and Opportunities</div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-time">12:30 PM - 1:30 PM</div>
+                            <div class="agenda-desc">Lunch</div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-time">1:30 PM - 3:00 PM</div>
+                            <div class="agenda-desc">Breakout Sessions: Research Collaboration</div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-time">3:00 PM - 3:15 PM</div>
+                            <div class="agenda-desc">Afternoon Break</div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-time">3:15 PM - 4:45 PM</div>
+                            <div class="agenda-desc">Breakout Sessions: Education and Curriculum Development</div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-time">4:45 PM - 5:00 PM</div>
+                            <div class="agenda-desc">Day 1 Wrap-up</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Day 2 Agenda -->
+                <div class="agenda-day">
+                    <div class="agenda-header">
+                        <h3>Day 2: August 8, 2025</h3>
+                    </div>
+                    <div class="agenda-items">
+                        <div class="agenda-item">
+                            <div class="agenda-time">9:00 AM - 9:30 AM</div>
+                            <div class="agenda-desc">Morning Coffee and Networking</div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-time">9:30 AM - 10:45 AM</div>
+                            <div class="agenda-desc">Industry Panel: Workforce Needs and Technology Transfer</div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-time">10:45 AM - 11:00 AM</div>
+                            <div class="agenda-desc">Coffee Break</div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-time">11:00 AM - 12:30 PM</div>
+                            <div class="agenda-desc">Breakout Sessions: Industry-Academia Partnerships</div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-time">12:30 PM - 1:30 PM</div>
+                            <div class="agenda-desc">Lunch</div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-time">1:30 PM - 3:00 PM</div>
+                            <div class="agenda-desc">Roadmap Development Session</div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-time">3:00 PM - 3:15 PM</div>
+                            <div class="agenda-desc">Afternoon Break</div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-time">3:15 PM - 4:30 PM</div>
+                            <div class="agenda-desc">Report Out and Next Steps</div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-time">4:30 PM - 5:00 PM</div>
+                            <div class="agenda-desc">Closing Remarks</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-box" style="margin-top: 40px;">
+                <h3>Breakout Session Topics</h3>
+                <ul>
+                    <li>Autonomous Systems and AI Integration</li>
+                    <li>Robotics in Healthcare and Rehabilitation</li>
+                    <li>Industrial Automation and Smart Manufacturing</li>
+                    <li>Agricultural Robotics and Environmental Monitoring</li>
+                    <li>Educational Robotics and STEM Outreach</li>
+                    <li>Ethical and Societal Implications of Robotics</li>
+                    <li>Robotics for Disaster Response and Public Safety</li>
+                    <li>Underwater and Space Robotics</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -393,15 +702,34 @@
                 <div class="footer-section">
                     <h3>Contact Information</h3>
                     <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> Prof. Karthik Dantu</p>
-                        <p><i class="fas fa-envelope"></i>Founding Director, Center for Embodied Autonomy and Robotics</p>
+                        <p><i class="fas fa-user"></i> Prof. Karthik Dantu</p>
+                        <p><i class="fas fa-briefcase"></i> Founding Director, Center for Embodied Autonomy and Robotics</p>
+                        <p><i class="fas fa-envelope"></i> kdantu@buffalo.edu</p>
+                        <p><i class="fas fa-phone"></i> (716) 645-1590</p>
                         <p><i class="fas fa-map-marker-alt"></i> University at Buffalo, North Campus, Buffalo, NY</p>
                     </div>
                 </div>
                 
-                
+                <div class="footer-section">
+                    <h3>Workshop Partners</h3>
+                    <div class="footer-logos">
+                        <div class="logo suny-logo">
+                            <img src="static/images/suny.png" alt="SUNY Logo">
+                        </div>
+                        <div class="logo ub-logo">
+                            <img src="static/images/ubb.png" alt="University at Buffalo Logo">
+                        </div>
+                        <div class="logo">
+                            <img src="static/images/cear.png" alt="CEAR Logo">
+                        </div>
+                    </div>
+                </div>
             </div>
             
+            <div class="copyright">
+                <p>&copy; 2025 SUNY RAISE Workshop. All rights reserved.</p>
+                <p>Center for Embodied Autonomy and Robotics | University at Buffalo</p>
+            </div>
         </div>
     </footer>
 </body>

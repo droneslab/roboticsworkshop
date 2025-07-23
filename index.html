@@ -457,12 +457,15 @@
 .dropdown-content {
     display: none;
     position: absolute;
+    bottom: 100%; /* Position above the button */
+    left: 0;
     background-color: white;
     min-width: 200px;
     box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    z-index: 9999; /* Make sure it's high */
+    z-index: 9999;
     border-radius: 5px;
 }
+
 
 
 /* Links inside the dropdown */

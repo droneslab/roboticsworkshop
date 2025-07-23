@@ -617,6 +617,48 @@
             margin-top: 20px;
             flex-wrap: wrap;
         }
+        .places-btn {
+    background: #27ae60; /* Green color */
+    color: white;
+}
+
+/* Update button group styles to include new class */
+.register-btn, .agenda-btn, .places-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    text-align: center;
+    min-width: 180px;
+    border: 2px solid white;
+}
+
+/* Update hover states for all buttons */
+.register-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.agenda-btn:hover {
+    background: #8e44ad;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.places-btn:hover {
+    background: #219653;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Remove old .dropbtn styles */
+.dropbtn {
+    /* Remove all styl
         
         .footer-logos .logo {
             padding: 15px;
@@ -750,22 +792,25 @@
                 </div>
                 
                 <div class="button-group">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScj94zsNhL2HseGaLdo83LqN0ZakEfd3TKZfY4WCnunRqkdFQ/viewform?pli=1&pli=1" class="register-btn" target="_blank">
-                        <i class="fas fa-edit"></i> Register Now
-                    </a>
-                   
-                    <a href="#agenda" class="agenda-btn">
-                        <i class="fas fa-calendar"></i> View Agenda
-                    </a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScj94zsNhL2HseGaLdo83LqN0ZakEfd3TKZfY4WCnunRqkdFQ/viewform?pli=1&pli=1" 
+       class="register-btn" target="_blank">
+        <i class="fas fa-edit"></i> Register Now
+    </a>
+    
+    <a href="#agenda" class="agenda-btn">
+        <i class="fas fa-calendar"></i> View Agenda
+    </a>
 
-                    <div class="dropdown">
-        <button class="register-btn"><i class="fas fa-bed"></i> Places to Stay</button>
+    <div class="dropdown">
+        <a href="#" class="places-btn">
+            <i class="fas fa-bed"></i> Places to Stay
+        </a>
         <div class="dropdown-content">
             <a href="https://www.hilton.com/en/hotels/buffldt-doubletree-buffalo-amherst/" target="_blank">Hilton Double Tree (6 mins)</a>
             <a href="https://www.marriott.com/en-us/hotels/bufny-buffalo-marriott-niagara/overview/" target="_blank">Marriott Niagara (7 mins)</a>
         </div>
     </div>
-                </div>
+</div>
             </div>
         </div>
     </header>

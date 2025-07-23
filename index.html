@@ -438,13 +438,21 @@
         }
         /* Dropdown Button */
 .dropbtn {
-    background-color: #005BBB; /* or match your theme color */
+    background-color: #005BBB; /* Match your button theme */
     color: white;
-    padding: 10px 18px;
+    padding: 10px 20px;
     font-size: 16px;
     border: none;
+    border-radius: 5px; /* Rounded corners like your other buttons */
     cursor: pointer;
-    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 44px; /* Match other button height */
+    font-family: inherit;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
 }
 
 /* Container needed to position the dropdown */

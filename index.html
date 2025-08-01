@@ -366,6 +366,44 @@
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
 }
+        .contact-container {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+    
+    .contact-container .contact-info {
+        flex: 1;
+        min-width: 300px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+    
+    .contact-container .contact-info:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-5px);
+    }
+    
+    .contact-container .contact-info p {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .contact-container .contact-info p:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    
+    @media (max-width: 768px) {
+        .contact-container {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
 
 .footer-logos .partner-logo img {
     max-height: 400px; /* Increased image size */
@@ -1011,28 +1049,35 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Contact Information</h3>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <div class="contact-container">
+                    <!-- First Contact Column -->
                     <div class="contact-info">
                         <p><i class="fas fa-user"></i> Prof. Karthik Dantu</p>
                         <p><i class="fas fa-briefcase"></i> Founding Director, Center for Embodied Autonomy and Robotics</p>
                         <p><i class="fas fa-envelope"></i> kdantu@buffalo.edu</p>
-                    
                         <p><i class="fas fa-map-marker-alt"></i> University at Buffalo, North Campus, Buffalo, NY</p>
                     </div>
-                    <div class="contact-info">
-                        <p><i class="fas fa-user"></i> Prof. Karthik Dantu</p>
-                        <p><i class="fas fa-briefcase"></i> Founding Director, Center for Embodied Autonomy and Robotics</p>
-                        <p><i class="fas fa-envelope"></i> kdantu@buffalo.edu</p>
                     
+                    <!-- Second Contact Column -->
+                    <div class="contact-info">
+                        <p><i class="fas fa-user"></i> Prof. Souma Chowdhury</p>
+                        <p><i class="fas fa-briefcase"></i> Associate Professor, Mechanical Engineering</p>
+                        <p><i class="fas fa-envelope"></i> soumac@buffalo.edu</p>
                         <p><i class="fas fa-map-marker-alt"></i> University at Buffalo, North Campus, Buffalo, NY</p>
                     </div>
                 </div>
-                
-            
+            </div>
         </div>
-    </footer>
+        
+        <!-- Copyright -->
+        <div class="copyright">
+            <p>© 2025 Center for Embodied Autonomy and Robotics | University at Buffalo</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

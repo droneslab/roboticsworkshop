@@ -6,459 +6,509 @@
     <title>SUNY RAISE Workshop</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --gray: #7f8c8d;
-            --suny-blue: #003366;
-            --ub-blue: #005bbb;
-            --stony-red: #b31b1b;
-            --bingham-green: #006633;
-            --albany-purple: #6a1b9a;
-            --section-bg: #f8f9fa;
-            --section-alt: #eef2f7;
-            --organizer-bg: #ffffff;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: #333;
-            line-height: 1.6;
-            background-color: #f8f9fa;
-        }
-        
-        h1, h2, h3, h4, h5 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            color: var(--primary);
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        section {
-            padding: 60px 0;
-        }
-        .footer-logos .ub-logo {
-        background: var(--ub-blue);
+   <style>
+    :root {
+        --primary: #2c3e50;
+        --secondary: #3498db;
+        --accent: #e74c3c;
+        --light: #ecf0f1;
+        --dark: #2c3e50;
+        --gray: #7f8c8d;
+        --suny-blue: #003366;
+        --ub-blue: #005bbb;
+        --stony-red: #b31b1b;
+        --bingham-green: #006633;
+        --albany-purple: #6a1b9a;
+        --section-bg: #f8f9fa;
+        --section-alt: #eef2f7;
+        --organizer-bg: #ffffff;
     }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: "";
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--secondary);
-            border-radius: 2px;
-        }
-        
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 40px 0 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon fill="rgba(255,255,255,0.05)" points="0,0 100,0 100,100"/></svg>');
-            background-size: 100% 100%;
-        }
-        
-        .header-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-        }
-        
-        .logo {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100px;
-            min-width: 150px;
-            transition: transition 0.3s ease;
-        }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Roboto', sans-serif;
+        color: #333;
+        line-height: 1.6;
+        background-color: #f8f9fa;
+    }
+    
+    h1, h2, h3, h4, h5 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        color: var(--primary);
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    
+    .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--secondary);
+        border-radius: 2px;
+    }
+    
+    /* Header Styles */
+    header {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon fill="rgba(255,255,255,0.05)" points="0,0 100,0 100,100"/></svg>');
+        background-size: 100% 100%;
+    }
+    
+    .header-content {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+    }
+    
+    .logo {
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100px;
+        min-width: 150px;
+        transition: transform 0.3s ease;
+    }
 
-        .logo:hover {
-            transform: translateY(-5px);
-        }
-        
-        
-        .logo img {
-            height: 70px;
-            max-width: 100%;
-        }
-        
-        .suny-logo {
-            background: var(--suny-blue);
-        }
-        
-        .ub-logo {
-            background: var(--ub-blue);
-        }
-        
-        .stony-logo {
-            background: var(--stony-red);
-        }
-        
-        .bingham-logo {
-            background: var(--bingham-green);
-        }
-        
-        .albany-logo {
-            background: var(--albany-purple);
-        }
-        
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: white;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        header p {
-            font-size: 1.15rem;
-            max-width: 800px;
-            margin: 0 auto 25px;
-            opacity: 0.9;
-        }
-        
-        .date-badge {
-            background: var(--accent);
-            display: inline-block;
-            padding: 8px 25px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            margin-bottom: 15px;
-        }
-        
-        .workshop-details {
-            background: rgba(255,255,255,0.1);
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 700px;
-            margin: 0 auto 20px;
-        }
-        
-        .workshop-details p {
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .workshop-details i {
-            margin-right: 10px;
-        }
-        .agenda-item {
-            display: grid;
-            grid-template-columns: 1fr 2fr 1fr; /* Time, Description, Location */
-            gap: 15px;
-            padding: 15px 0;
-            border-bottom: 1px dashed #e0e0e0;
-        }
-        
-        .agenda-time {
-            font-weight: 600;
-            color: var(--secondary);
-        }
-        
-        .agenda-desc {
-            flex: 1;
-        }
-        
-        .agenda-location {
-            font-weight: 600;
-            color: var(--location-color);
-            display: flex;
-            align-items: center;
-        }
-        
-        .agenda-location i {
-            margin-right: 8px;
-        }
-        
-        .agenda-header {
-            display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
-            gap: 15px;
-            background: var(--primary);
-            color: white;
-            padding: 15px 20px;
-        }
-        
-        .agenda-header h3 {
-            margin: 0;
-            color: white;
-            grid-column: 1 / span 3;
-            text-align: center;
-        }
-        
-        .agenda-header .col-header {
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-            opacity: 0.9;
-        }
-        
-        @media (max-width: 768px) {
-            .agenda-item {
-                grid-template-columns: 1fr;
-            }
-            
-            .agenda-header {
-                grid-template-columns: 1fr;
-            }
-            
-            .agenda-header .col-header {
-                display: none;
-            }
-            
-            .agenda-time, .agenda-location {
-                display: flex;
-                align-items: center;
-                margin-top: 5px;
-            }
-            
-            .agenda-time::before {
-                content: "Time: ";
-                font-weight: bold;
-                margin-right: 8px;
-            }
-            
-            .agenda-location::before {
-                content: "Location: ";
-                font-weight: bold;
-                margin-right: 8px;
-            }
-        }
-        
-        .button-group {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .register-btn, .flyer-btn, .agenda-btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            text-align: center;
-            min-width: 180px;
-        }
-        
-        .register-btn {
-            background: var(--accent);
-            color: white;
-        }
-        
-        .register-btn:hover {
-            background: #c0392b;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-        }
-        
-        .flyer-btn {
-            background: var(--secondary);
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .flyer-btn:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-        }
-        
-        .agenda-btn {
-            background: #9b59b6;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .agenda-btn:hover {
-            background: #8e44ad;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-        }
-        
-        /* Content Sections */
-        .overview-section {
-            background-color: var(--section-bg);
-        }
-        
-        .content-box {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
-        
-        .content-box h3 {
-            color: var(--secondary);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-        
-        .content-box p {
-            margin-bottom: 15px;
-            line-height: 1.7;
-        }
-        
-        .flyer-content {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .flyer-content p {
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-        
-        .flyer-content .highlight {
-            background: linear-gradient(120deg, rgba(52, 152, 219, 0.15) 0%, rgba(52, 152, 219, 0) 100%);
-            padding: 25px;
-            border-radius: 10px;
-            margin: 25px 0;
-            border-left: 4px solid var(--secondary);
-        }
-        
-        .flyer-content .purpose-list {
-            counter-reset: purpose-counter;
-            margin: 25px 0;
-            padding-left: 20px;
-        }
-        
-        .flyer-content .purpose-list li {
-            margin-bottom: 15px;
-            position: relative;
-            padding-left: 35px;
-            list-style-type: none;
-        }
-        
-        .flyer-content .purpose-list li::before {
-            counter-increment: purpose-counter;
-            content: counter(purpose-counter) ")";
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-weight: bold;
-            color: var(--secondary);
-            font-size: 1.2rem;
-        }
-        
-        .agenda-section {
-            background-color: var(--section-alt);
-        }
-        
-        .agenda-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .agenda-day {
-    flex: 1;
-    min-width: 300px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    overflow: hidden;
-    margin-bottom: 30px; /* Add this */
-}
-
-
-        
-        .agenda-header {
-            background: var(--primary);
-            color: white;
-            padding: 15px 20px;
-            text-align: center;
-        }
-        
-        .agenda-header h3 {
-            margin: 0;
-            color: white;
-        }
-        .footer-logos .partner-logo {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 20px;
-    min-width: 400px;
-    height: 380px; /* Increased height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
-}
-        .contact-container {
+    .logo:hover {
+        transform: translateY(-5px);
+    }
+    
+    .logo img {
+        height: 70px;
+        max-width: 100%;
+    }
+    
+    .suny-logo { background: var(--suny-blue); }
+    .ub-logo { background: var(--ub-blue); }
+    .stony-logo { background: var(--stony-red); }
+    .bingham-logo { background: var(--bingham-green); }
+    .albany-logo { background: var(--albany-purple); }
+    
+    header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: white;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    header p {
+        font-size: 1.15rem;
+        max-width: 800px;
+        margin: 0 auto 25px;
+        opacity: 0.9;
+    }
+    
+    .date-badge {
+        background: var(--accent);
+        display: inline-block;
+        padding: 8px 25px;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        margin-bottom: 15px;
+    }
+    
+    .workshop-details {
+        background: rgba(255,255,255,0.1);
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 700px;
+        margin: 0 auto 20px;
+    }
+    
+    .workshop-details p {
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .workshop-details i {
+        margin-right: 10px;
+    }
+    
+    /* Button Styles */
+    .button-group {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .register-btn, .flyer-btn, .agenda-btn, .places-btn {
+        display: inline-block;
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        text-align: center;
+        min-width: 180px;
+        border: 2px solid white;
+    }
+    
+    .register-btn {
+        background: var(--accent);
+        color: white;
+    }
+    
+    .register-btn:hover {
+        background: #c0392b;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    
+    .flyer-btn {
+        background: var(--secondary);
+        color: white;
+    }
+    
+    .flyer-btn:hover {
+        background: #2980b9;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    
+    .agenda-btn {
+        background: #9b59b6;
+        color: white;
+    }
+    
+    .agenda-btn:hover {
+        background: #8e44ad;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    
+    .places-btn {
+        background: #27ae60;
+        color: white;
+    }
+    
+    .places-btn:hover {
+        background: #219653;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    
+    /* Content Sections */
+    .overview-section {
+        background-color: var(--section-bg);
+    }
+    
+    .content-box {
+        background: white;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        margin-bottom: 30px;
+    }
+    
+    .content-box h3 {
+        color: var(--secondary);
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+    }
+    
+    .content-box p {
+        margin-bottom: 15px;
+        line-height: 1.7;
+    }
+    
+    .flyer-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    .flyer-content p {
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+    
+    .flyer-content .highlight {
+        background: linear-gradient(120deg, rgba(52, 152, 219, 0.15) 0%, rgba(52, 152, 219, 0) 100%);
+        padding: 25px;
+        border-radius: 10px;
+        margin: 25px 0;
+        border-left: 4px solid var(--secondary);
+    }
+    
+    .flyer-content .purpose-list {
+        counter-reset: purpose-counter;
+        margin: 25px 0;
+        padding-left: 20px;
+    }
+    
+    .flyer-content .purpose-list li {
+        margin-bottom: 15px;
+        position: relative;
+        padding-left: 35px;
+        list-style-type: none;
+    }
+    
+    .flyer-content .purpose-list li::before {
+        counter-increment: purpose-counter;
+        content: counter(purpose-counter) ")";
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-weight: bold;
+        color: var(--secondary);
+        font-size: 1.2rem;
+    }
+    
+    /* Agenda Section */
+    .agenda-section {
+        background-color: var(--section-alt);
+    }
+    
+    .agenda-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 30px;
+        justify-content: center;
+    }
+    
+    .agenda-day {
+        flex: 1;
+        min-width: 300px;
+        max-width: 500px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        overflow: hidden;
+        margin-bottom: 30px;
+    }
+    
+    .agenda-header {
+        background: var(--primary);
+        color: white;
+        padding: 15px 20px;
+        text-align: center;
+    }
+    
+    .agenda-header h3 {
+        margin: 0;
+        color: white;
+    }
+    
+    .agenda-items {
+        padding: 20px;
+    }
+    
+    .agenda-item {
+        display: grid;
+        grid-template-columns: 100px 1fr 100px;
+        gap: 15px;
+        padding: 12px 0;
+        border-bottom: 1px dashed #e0e0e0;
+        align-items: center;
+    }
+    
+    .agenda-item:last-child {
+        border-bottom: none;
+    }
+    
+    .agenda-time {
+        font-weight: 600;
+        color: var(--secondary);
+        font-size: 0.9rem;
+    }
+    
+    .agenda-desc {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+    
+    .agenda-location {
+        font-size: 0.85rem;
+        color: var(--gray);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    
+    .agenda-location i {
+        margin-right: 5px;
+    }
+    
+    /* Organizers Section */
+    .organizers-section {
+        background: linear-gradient(to bottom, #f8f9fa, #eef2f7);
+        padding: 60px 0;
+    }
+    
+    .organizers-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 30px;
+    }
+    
+    .organizer-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        width: 100%;
+        max-width: 200px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .organizer-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    
+    .organizer-photo {
+        height: 200px;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+    }
+    
+    .organizer-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+    
+    .organizer-card:hover .organizer-photo img {
+        transform: scale(1.05);
+    }
+    
+    .organizer-info {
+        padding: 25px;
+        text-align: center;
+    }
+    
+    .organizer-name {
+        color: var(--primary);
+        margin-bottom: 8px;
+        font-size: 1.3rem;
+    }
+    
+    .organizer-title {
+        color: var(--secondary);
+        font-weight: 500;
+        margin-bottom: 12px;
+        font-size: 1rem;
+    }
+    
+    .organizer-affiliation {
+        color: var(--gray);
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    /* Footer */
+    footer {
+        background: var(--dark);
+        color: white;
+        padding: 50px 0 30px;
+    }
+    
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-bottom: 30px;
+    }
+    
+    .footer-section {
+        flex: 1 1 300px;
+    }
+    
+    .footer-section h3 {
+        color: white;
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    
+    .footer-section h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: var(--accent);
+    }
+    
+    .contact-container {
         display: flex;
         gap: 30px;
         flex-wrap: wrap;
     }
     
-    .contact-container .contact-info {
+    .contact-info {
         flex: 1;
         min-width: 300px;
         background: rgba(255, 255, 255, 0.1);
@@ -467,507 +517,162 @@
         transition: all 0.3s ease;
     }
     
-    .contact-container .contact-info:hover {
+    .contact-info:hover {
         background: rgba(255, 255, 255, 0.15);
         transform: translateY(-5px);
     }
     
-    .contact-container .contact-info p {
+    .contact-info p {
         margin-bottom: 15px;
         padding-bottom: 15px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: flex-start;
     }
     
-    .contact-container .contact-info p:last-child {
+    .contact-info p:last-child {
         border-bottom: none;
         margin-bottom: 0;
         padding-bottom: 0;
     }
     
+    .contact-info i {
+        margin-right: 10px;
+        color: var(--secondary);
+        min-width: 20px;
+    }
+    
+    .copyright {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        font-size: 0.9rem;
+        color: rgba(255,255,255,0.6);
+    }
+    
+    /* Dropdown Menu */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        background-color: white;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        z-index: 9999;
+        border-radius: 5px;
+    }
+    
+    .dropdown-content a {
+        color: #333;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 15px;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    /* Responsive Styles */
     @media (max-width: 768px) {
+        header h1 {
+            font-size: 2.2rem;
+        }
+        
+        .logo-container {
+            gap: 15px;
+        }
+        
+        .logo {
+            padding: 10px;
+            min-height: 80px;
+            min-width: 120px;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .button-group {
+            gap: 15px;
+        }
+        
+        .agenda-container {
+            flex-direction: column;
+        }
+        
+        .agenda-item {
+            grid-template-columns: 1fr;
+            gap: 5px;
+        }
+        
+        .agenda-time, .agenda-location {
+            font-size: 0.8rem;
+        }
+        
+        .agenda-location {
+            justify-content: flex-start;
+        }
+        
+        .flyer-content {
+            font-size: 1rem;
+            padding: 15px;
+        }
+        
+        .flyer-content .purpose-list li {
+            padding-left: 30px;
+        }
+        
         .contact-container {
             flex-direction: column;
             gap: 20px;
         }
     }
-
-.footer-logos .partner-logo img {
-    max-height: 400px; /* Increased image size */
-    max-width: 380%;
-    filter: none;
-    opacity: 1;
-    transition: transform 0.3s ease;
-}
-
-.footer-logos .partner-logo:hover {
-    transform: scale(1.05); /* subtle hover zoom effect */
-}
-
-
-
-        
-        .agenda-items {
-            padding: 20px;
+    
+    @media (max-width: 480px) {
+        header {
+            padding: 30px 0 25px;
         }
         
-        .agenda-item {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1.5fr;
-    gap: 20px;
-    padding: 15px 20px;
-    border-bottom: 1px dashed #e0e0e0;
-    align-items: center;
-}
-
-
-        
-        .agenda-item:last-child {
-            border-bottom: none;
+        header h1 {
+            font-size: 1.8rem;
         }
         
-        .agenda-time {
-            min-width: 100px;
-            font-weight: 600;
-            color: var(--secondary);
+        .date-badge {
+            font-size: 0.9rem;
+            padding: 6px 20px;
         }
         
-        .agenda-desc {
-            flex: 1;
+        .button-group {
+            flex-direction: column;
+            align-items: center;
         }
         
-        /* Organizers Section - Fixed Photo Cropping */
-        .organizers-section {
-            background: linear-gradient(to bottom, #f8f9fa, #eef2f7);
-            padding: 60px 0;
-        }
-        
-        .organizers-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
+        .register-btn, .flyer-btn, .agenda-btn {
+            width: 100%;
+            max-width: 250px;
         }
         
         .organizer-card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 200px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 100%;
         }
         
-        .organizer-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-        /* Dropdown Button */
-
-        .register-btn, .flyer-btn, .agenda-btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            text-align: center;
-            min-width: 180px;
-        }
-.dropbtn {
-    background-color: #005BBB; /* Match your button theme */
-    color: white;
-    height: 48px;
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    text-align: center;
-    min-width: 180px;
-}
-
-/* Container needed to position the dropdown */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    bottom: 100%; /* Position above the button */
-    left: 0;
-    background-color: white;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    z-index: 9999;
-    border-radius: 5px;
-}
-
-
-
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: #333;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-size: 15px;
-}
-
-/* Change color on hover */
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-/* Show the dropdown on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Optional: style dropdown hover button */
-.dropdown:hover .dropbtn {
-    background-color: #003F88;
-}
-
-        .organizer-photo {
-            height: 200px;
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
-        }
-        
-        .organizer-photo img {
-            width: 100%;
-            height: 100%; /* Fixed from 120% to 100% */
-            object-fit: cover;
-            object-position: center top; /* Ensures faces are centered */
-            display: block;
-        }
-        
-        .organizer-card:hover .organizer-photo img {
-            transform: scale(1.05);
-        }
-        
-        .organizer-info {
-            padding: 25px;
-            text-align: center;
-        }
-        
-        .organizer-name {
-            color: var(--primary);
-            margin-bottom: 8px;
-            font-size: 1.3rem;
-        }
-        
-        .organizer-title {
-            color: var(--secondary);
-            font-weight: 500;
-            margin-bottom: 12px;
-            font-size: 1rem;
-        }
-        
-        .organizer-affiliation {
-            color: var(--gray);
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 50px 0 30px;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-section {
-            flex: 1 1 300px;
-        }
-        
-        .footer-section h3 {
-            color: white;
-            margin-bottom: 20px;
-            font-size: 1.4rem;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-section h3::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--accent);
-        }
-        
-        .contact-info p {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .contact-info i {
-            margin-right: 10px;
-            color: var(--secondary);
-            min-width: 20px;
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.6);
-        }
-        
-        .footer-logos {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        .places-btn {
-    background: #27ae60; /* Green color */
-    color: white;
-}
-
-/* Update button group styles to include new class */
-.register-btn, .agenda-btn, .places-btn {
-    display: inline-block;
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    text-align: center;
-    min-width: 180px;
-    border: 2px solid white;
-}
-
-/* Update hover states for all buttons */
-.register-btn:hover {
-    background: #c0392b;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-
-.agenda-btn:hover {
-    background: #8e44ad;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-        /* Agenda Section Styling */
-.agenda-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-top: 30px;
-    justify-content: center; /* Center the cards */
-}
-
-.agenda-day {
-    flex: 1;
-    min-width: 300px;
-    max-width: 500px; /* Limit maximum width */
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Slightly stronger shadow */
-    overflow: hidden;
-    margin-bottom: 30px; /* Add bottom margin */
-}
-
-.agenda-header {
-    background: var(--primary);
-    color: white;
-    padding: 15px 20px;
-    text-align: center;
-}
-
-.agenda-items {
-    padding: 20px;
-}
-
-.agenda-item {
-    display: grid;
-    grid-template-columns: 100px 1fr 80px; /* Time, Description, Location */
-    gap: 15px;
-    padding: 12px 0;
-    border-bottom: 1px dashed #e0e0e0;
-    align-items: center;
-}
-
-.agenda-item:last-child {
-    border-bottom: none;
-}
-
-.agenda-time {
-    font-weight: 600;
-    color: var(--secondary);
-    font-size: 0.9rem;
-}
-
-.agenda-desc {
-    font-size: 0.95rem;
-    line-height: 1.4;
-}
-
-.agenda-location {
-    font-size: 0.85rem;
-    color: var(--gray);
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.agenda-location i {
-    margin-right: 5px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .agenda-day {
-        min-width: 100%;
-    }
-    
-    .agenda-item {
-        grid-template-columns: 1fr;
-        gap: 5px;
-    }
-    
-    .agenda-time, .agenda-location {
-        font-size: 0.8rem;
-    }
-    
-    .agenda-location {
-        justify-content: flex-start;
-    }
-}
-
-.places-btn:hover {
-    background: #219653;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-
-/* Remove old .dropbtn styles */
-.dropbtn {
-    /* Remove all styl
-        
-        .footer-logos .logo {
+        .flyer-content .highlight {
             padding: 15px;
-            height: 100px;
-            min-width: 140px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
-        
-        .footer-logos img {
-            height: 50px;
-            filter: brightness(0) invert(1);
-            opacity: 0.9;
-        }
-        
-        .first-letter {
-            font-weight: bold;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.2rem;
-            }
-            
-            .logo-container {
-                gap: 15px;
-            }
-            
-            .logo {
-                padding: 10px;
-                min-height: 80px;
-                min-width: 120px;
-            }
-            
-            .logo img {
-                height: 50px;
-            }
-            
-            .button-group {
-                gap: 15px;
-            }
-            
-            .agenda-container {
-                flex-direction: column;
-            }
-            
-            .flyer-content {
-                font-size: 1rem;
-                padding: 15px;
-            }
-            
-            .flyer-content .purpose-list li {
-                padding-left: 30px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            header {
-                padding: 30px 0 25px;
-            }
-            
-            header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .date-badge {
-                font-size: 0.9rem;
-                padding: 6px 20px;
-            }
-            
-            .button-group {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .register-btn, .flyer-btn, .agenda-btn {
-                width: 100%;
-                max-width: 250px;
-            }
-            
-            .agenda-time {
-                min-width: 80px;
-                font-size: 0.9rem;
-            }
-            
-            .organizer-card {
-                max-width: 100%;
-            }
-            
-            .flyer-content .highlight {
-                padding: 15px;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
     <!-- Header -->

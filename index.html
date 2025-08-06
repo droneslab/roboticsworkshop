@@ -776,6 +776,92 @@
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
+        /* Agenda Section Styling */
+.agenda-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+    justify-content: center; /* Center the cards */
+}
+
+.agenda-day {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px; /* Limit maximum width */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Slightly stronger shadow */
+    overflow: hidden;
+    margin-bottom: 30px; /* Add bottom margin */
+}
+
+.agenda-header {
+    background: var(--primary);
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.agenda-items {
+    padding: 20px;
+}
+
+.agenda-item {
+    display: grid;
+    grid-template-columns: 100px 1fr 80px; /* Time, Description, Location */
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px dashed #e0e0e0;
+    align-items: center;
+}
+
+.agenda-item:last-child {
+    border-bottom: none;
+}
+
+.agenda-time {
+    font-weight: 600;
+    color: var(--secondary);
+    font-size: 0.9rem;
+}
+
+.agenda-desc {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.agenda-location {
+    font-size: 0.85rem;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.agenda-location i {
+    margin-right: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .agenda-day {
+        min-width: 100%;
+    }
+    
+    .agenda-item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+    
+    .agenda-time, .agenda-location {
+        font-size: 0.8rem;
+    }
+    
+    .agenda-location {
+        justify-content: flex-start;
+    }
+}
 
 .places-btn:hover {
     background: #219653;

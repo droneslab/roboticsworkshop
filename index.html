@@ -418,13 +418,15 @@
         }
         
         .agenda-day {
-            flex: 1;
-            min-width: 300px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            overflow: hidden;
-        }
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    margin-bottom: 30px; /* Add this */
+}
+
 
         
         .agenda-header {
@@ -509,11 +511,14 @@
         }
         
         .agenda-item {
-    padding: 15px 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1.5fr;
+    gap: 20px;
+    padding: 15px 20px;
     border-bottom: 1px dashed #e0e0e0;
-    display: flex;
-    gap: 20px; /* Add this line */
+    align-items: center;
 }
+
 
         
         .agenda-item:last-child {

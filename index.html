@@ -198,6 +198,89 @@
         .workshop-details i {
             margin-right: 10px;
         }
+        .agenda-item {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr; /* Time, Description, Location */
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        
+        .agenda-time {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        
+        .agenda-desc {
+            flex: 1;
+        }
+        
+        .agenda-location {
+            font-weight: 600;
+            color: var(--location-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .agenda-location i {
+            margin-right: 8px;
+        }
+        
+        .agenda-header {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 15px 20px;
+        }
+        
+        .agenda-header h3 {
+            margin: 0;
+            color: white;
+            grid-column: 1 / span 3;
+            text-align: center;
+        }
+        
+        .agenda-header .col-header {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .agenda-item {
+                grid-template-columns: 1fr;
+            }
+            
+            .agenda-header {
+                grid-template-columns: 1fr;
+            }
+            
+            .agenda-header .col-header {
+                display: none;
+            }
+            
+            .agenda-time, .agenda-location {
+                display: flex;
+                align-items: center;
+                margin-top: 5px;
+            }
+            
+            .agenda-time::before {
+                content: "Time: ";
+                font-weight: bold;
+                margin-right: 8px;
+            }
+            
+            .agenda-location::before {
+                content: "Location: ";
+                font-weight: bold;
+                margin-right: 8px;
+            }
+        }
         
         .button-group {
             display: flex;
@@ -890,47 +973,60 @@
                 <div class="agenda-day">
                     <div class="agenda-header">
                         <h3>Day 1: August 7, 2025</h3>
+                        <div class="col-header">Time</div>
+                        <div class="col-header">Session</div>
+                        <div class="col-header">Location</div>
                     </div>
                     <div class="agenda-items">
                         <div class="agenda-item">
                             <div class="agenda-time">9:00-9:30 AM</div>
                             <div class="agenda-desc">Registration and Welcome Coffee</div>
+                            <div class="agenda-location"><i class="fas fa-door-open"></i> Lockwood Lobby</div>
                         </div>
                         <div class="agenda-item">
                             <div class="agenda-time">9:30-10:00 AM</div>
                             <div class="agenda-desc">Opening Remarks & SUNY Vision for Robotics</div>
+                            <div class="agenda-location"><i class="fas fa-chalkboard"></i> Room 205</div>
                         </div>
                         <div class="agenda-item">
                             <div class="agenda-time">10:00-10:45 AM</div>
                             <div class="agenda-desc">Keynote Address: "The Future of Robotics in New York"</div>
+                            <div class="agenda-location"><i class="fas fa-chalkboard"></i> Room 205</div>
                         </div>
                         <div class="agenda-item">
                             <div class="agenda-time">10:45-11:00 AM</div>
                             <div class="agenda-desc">Coffee Break</div>
+                            <div class="agenda-location"><i class="fas fa-coffee"></i> Atrium</div>
                         </div>
                         <div class="agenda-item">
                             <div class="agenda-time">11:00-12:30 PM</div>
                             <div class="agenda-desc">Panel Discussion: Research Thrusts and Opportunities</div>
+                            <div class="agenda-location"><i class="fas fa-chalkboard"></i> Room 205</div>
                         </div>
                         <div class="agenda-item">
                             <div class="agenda-time">12:30-1:30 PM</div>
                             <div class="agenda-desc">Lunch</div>
+                            <div class="agenda-location"><i class="fas fa-utensils"></i> Campus Dining Hall</div>
                         </div>
                         <div class="agenda-item">
                             <div class="agenda-time">1:30-3:00 PM</div>
                             <div class="agenda-desc">Breakout Sessions: Research Collaboration</div>
+                            <div class="agenda-location"><i class="fas fa-door-open"></i> Various Rooms</div>
                         </div>
                         <div class="agenda-item">
                             <div class="agenda-time">3:00-3:15 PM</div>
                             <div class="agenda-desc">Afternoon Break</div>
+                            <div class="agenda-location"><i class="fas fa-coffee"></i> Atrium</div>
                         </div>
                         <div class="agenda-item">
                             <div class="agenda-time">3:15-4:45 PM</div>
                             <div class="agenda-desc">Breakout Sessions: Education and Curriculum Development</div>
+                            <div class="agenda-location"><i class="fas fa-door-open"></i> Various Rooms</div>
                         </div>
                         <div class="agenda-item">
                             <div class="agenda-time">4:45-5:00 PM</div>
                             <div class="agenda-desc">Day 1 Wrap-up</div>
+                            <div class="agenda-location"><i class="fas fa-chalkboard"></i> Room 205</div>
                         </div>
                     </div>
                 </div>
@@ -939,34 +1035,41 @@
                 <div class="agenda-day">
                     <div class="agenda-header">
                         <h3>Day 2: August 8, 2025</h3>
+                        <div class="col-header">Time</div>
+                        <div class="col-header">Session</div>
+                        <div class="col-header">Location</div>
                     </div>
                     <div class="agenda-items">
                         <div class="agenda-item">
                             <div class="agenda-time">9:00-9:30 AM</div>
                             <div class="agenda-desc">Morning Coffee and Networking</div>
+                            <div class="agenda-location"><i class="fas fa-coffee"></i> Atrium</div>
                         </div>
                         <div class="agenda-item">
                             <div class="agenda-time">9:30-10:45 AM</div>
                             <div class="agenda-desc">Industry Panel: Workforce Needs and Technology Transfer</div>
+                            <div class="agenda-location"><i class="fas fa-chalkboard"></i> Room 205</div>
                         </div>
                         <div class="agenda-item">
                             <div class="agenda-time">10:45-11:00 AM</div>
                             <div class="agenda-desc">Coffee Break</div>
+                            <div class="agenda-location"><i class="fas fa-coffee"></i> Atrium</div>
                         </div>
                         <div class="agenda-item">
                             <div class="agenda-time">11:00-12:30 PM</div>
                             <div class="agenda-desc">Breakout Sessions: Industry-Academia Partnerships</div>
+                            <div class="agenda-location"><i class="fas fa-door-open"></i> Various Rooms</div>
                         </div>
                         <div class="agenda-item">
                             <div class="agenda-time">12:30-1:30 PM</div>
                             <div class="agenda-desc">Lunch</div>
+                            <div class="agenda-location"><i class="fas fa-utensils"></i> Campus Dining Hall</div>
                         </div>
                         <div class="agenda-item">
                             <div class="agenda-time">1:30-3:00 PM</div>
                             <div class="agenda-desc">Roadmap Development Session & Closing Remarks</div>
+                            <div class="agenda-location"><i class="fas fa-chalkboard"></i> Room 205</div>
                         </div>
-                        
-                        
                     </div>
                 </div>
             </div>
